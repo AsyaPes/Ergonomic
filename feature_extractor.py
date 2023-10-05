@@ -207,8 +207,8 @@ class FeaturesWriter:
             self._init_video(video_name, dir)
 
         if self._is_new_video(video_name, dir):
-            self.dump()
             self._init_video(video_name, dir)
+            self.dump()
 
         self.store(feature, idx)
 
