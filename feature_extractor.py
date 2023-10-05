@@ -169,10 +169,19 @@ class FeaturesWriter:
             os.mkdir(self.dir)
 
         features = to_segments(np.array([self.data[key] for key in sorted(self.data)]))
-        with open(self.path, "w") as fp:
-            for d in features:
-                d_str = [str(x) for x in d]
-                fp.write(" ".join(d_str) + "\n")
+        """ modifica:
+                with open(self.path, "w") as fp:
+                    for d in features:
+                        d_str = [str(x) for x in d]
+                        fp.write(" ".join(d_str) + "\n") """
+        try:
+            with open(self.path, "w") as fp:
+                for d in features:
+                    d_str = [str(x) for x in d]
+                    fp.write(" ".join(d_str) + "\n")
+            print("File scritto correttamente!")
+        except FileNotFoundError as e:
+            print(f"Errore durante la scrittura del file: {e}")
 
     def _is_new_video(self, video_name: str, dir: str) -> bool:
         """Checks whether the given video is new or the writer is already
