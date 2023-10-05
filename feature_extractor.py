@@ -148,7 +148,6 @@ class FeaturesWriter:
         """ modifica: self.path = path.join(dir, f"{video_name}.txt") """
         self.path = os.path.join(dir, f"{video_name}.txt")
         self.dir = dir
-        self.data = {}
 
     def has_video(self) -> bool:
         """Checks whether the writer is initialized with a video.
@@ -216,8 +215,8 @@ class FeaturesWriter:
             self._init_video(video_name, dir)
 
         if self._is_new_video(video_name, dir):
-            self._init_video(video_name, dir)
             self.dump()
+            self._init_video(video_name, dir)
 
         self.store(feature, idx)
 
