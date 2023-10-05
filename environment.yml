@@ -1,0 +1,22 @@
+name: ergonomic
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python==3.8
+  - pylint
+  - black
+  - typing
+  - matplotlib
+  - pytorch
+  - torchvision
+  - pandas
+  - pylint
+  - tqdm
+  - yaml
+  - scipy
+  - scikit-learn
+  - av
+  - opencv
+  - pre-commit
